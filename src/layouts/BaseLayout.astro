@@ -52,6 +52,26 @@ const { title, description } = Astro.props;
       );
 
       document.querySelectorAll('.fade-in').forEach((el) => observer.observe(el));
+
+      // Parallax scroll for hero background images
+      const parallaxEls = document.querySelectorAll<HTMLElement>('[data-parallax]');
+      if (parallaxEls.length && window.matchMedia('(prefers-reduced-motion: no-preference)').matches) {
+        let ticking = false;
+        window.addEventListener('scroll', () => {
+          if (!ticking) {
+            window.requestAnimationFrame(() => {
+              parallaxEls.forEach((el) => {
+                const rect = el.parentElement!.getBoundingClientRect();
+                const speed = 0.3;
+                const yOffset = rect.top * speed;
+                el.style.transform = `scale(1.1) translateY(${yOffset}px)`;
+              });
+              ticking = false;
+            });
+            ticking = true;
+          }
+        }, { passive: true });
+      }
     </script>
   </body>
 </html>

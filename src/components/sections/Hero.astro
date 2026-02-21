@@ -3,6 +3,7 @@ import { Image } from 'astro:assets';
 import Button from '../ui/Button.astro';
 import { siteConfig } from '../../data/siteConfig';
 import heroImage from '../../assets/images/yogawithclairehero2.png';
+import logoOutline from '../../assets/images/Yoga with Claire white outline.png';
 ---
 
 <section class="relative overflow-hidden min-h-[70vh] flex items-center">
@@ -10,15 +11,24 @@ import heroImage from '../../assets/images/yogawithclairehero2.png';
   <Image
     src={heroImage}
     alt=""
-    class="absolute inset-0 w-full h-full object-cover"
+    class="absolute inset-0 w-full h-full object-cover scale-110"
     widths={[640, 1024, 1536]}
     sizes="100vw"
+    data-parallax
   />
   <!-- Gradient overlay for depth -->
   <div class="absolute inset-0 bg-gradient-to-r from-primary-dark/75 via-primary-dark/50 to-primary-dark/30"></div>
 
-  <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-28 sm:py-36 lg:py-44">
-    <div class="max-w-2xl">
+  <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 lg:py-32">
+    <div class="max-w-2xl text-center sm:text-left">
+      <!-- Logo outline above text -->
+      <Image
+        src={logoOutline}
+        alt=""
+        class="w-28 sm:w-36 lg:w-44 h-auto opacity-80 mb-6 pointer-events-none select-none mx-auto sm:mx-0"
+        widths={[176, 320]}
+        loading="eager"
+      />
       <p class="text-secondary/80 text-xs sm:text-sm uppercase tracking-[0.2em] font-medium mb-6">
         {siteConfig.name}
       </p>
@@ -28,7 +38,7 @@ import heroImage from '../../assets/images/yogawithclairehero2.png';
       <p class="mt-8 text-white/80 text-lg leading-relaxed max-w-xl">
         Friendly, accessible yoga for complete beginners through to those returning to the mat.
       </p>
-      <div class="mt-10 flex flex-wrap gap-4">
+      <div class="mt-10 flex flex-wrap justify-center sm:justify-start gap-4">
         <Button href="/classes/" size="lg">View Classes</Button>
         <Button href="/timetable/" variant="outline" size="lg" class="border-white/40 text-white hover:bg-white hover:text-primary">See Timetable</Button>
       </div>
