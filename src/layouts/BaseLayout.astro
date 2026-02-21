@@ -54,7 +54,7 @@ const { title, description } = Astro.props;
       document.querySelectorAll('.fade-in').forEach((el) => observer.observe(el));
 
       // Parallax scroll for hero background images
-      const SCALE = 1.35;
+      const SCALE = 1.2;
       const parallaxEls = document.querySelectorAll<HTMLElement>('[data-parallax]');
       if (parallaxEls.length && window.matchMedia('(prefers-reduced-motion: no-preference)').matches) {
         let ticking = false;
@@ -66,7 +66,7 @@ const { title, description } = Astro.props;
                 const rect = parent.getBoundingClientRect();
                 const h = parent.offsetHeight;
                 const maxShift = h * (SCALE - 1) * 0.5;
-                const speed = 0.15;
+                const speed = 0.1;
                 const yOffset = Math.max(-maxShift, Math.min(maxShift, rect.top * speed));
                 el.style.transform = `scale(${SCALE}) translateY(${yOffset}px)`;
               });
