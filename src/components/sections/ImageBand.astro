@@ -1,0 +1,41 @@
+---
+import { Image } from 'astro:assets';
+import candlesImg from '../../assets/images/yoga with claire 3.jpg';
+import quoteImg from '../../assets/images/yoga with claire 4.jpg';
+import sunsetImg from '../../assets/images/yogawithclairehero.png';
+---
+
+<section class="overflow-hidden" aria-label="Gallery">
+  <div class="grid grid-cols-1 sm:grid-cols-3">
+    <div class="aspect-[16/9] sm:aspect-auto sm:h-64">
+      <Image
+        src={sunsetImg}
+        alt="Yoga silhouette at sunset on the beach"
+        class="w-full h-full object-cover"
+        widths={[640, 600]}
+        sizes="(min-width: 640px) 33vw, 100vw"
+        loading="lazy"
+      />
+    </div>
+    <div class="aspect-[16/9] sm:aspect-auto sm:h-64">
+      <Image
+        src={candlesImg}
+        alt="Calming candles and a 'love yourself' sign"
+        class="w-full h-full object-cover"
+        widths={[640, 600]}
+        sizes="(min-width: 640px) 33vw, 100vw"
+        loading="lazy"
+      />
+    </div>
+    <div class="aspect-[16/9] sm:aspect-auto sm:h-64">
+      <Image
+        src={quoteImg}
+        alt="Inspirational quote: I will celebrate myself, not for what I've done, but for who I am"
+        class="w-full h-full object-cover"
+        widths={[640, 600]}
+        sizes="(min-width: 640px) 33vw, 100vw"
+        loading="lazy"
+      />
+    </div>
+  </div>
+</section>

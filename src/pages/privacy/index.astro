@@ -1,0 +1,76 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { siteConfig } from '../../data/siteConfig';
+---
+
+<BaseLayout title="Privacy Policy" description="Privacy policy for Yoga With Claire.">
+  <!-- Page Header -->
+  <section class="bg-secondary py-16 sm:py-20">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h1 class="font-heading text-4xl sm:text-5xl font-bold text-primary text-center">
+        Privacy Policy
+      </h1>
+    </div>
+  </section>
+
+  <!-- Content -->
+  <section class="bg-bg py-16 sm:py-24">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+      <div>
+        <h2 class="font-heading text-2xl font-semibold text-primary mb-3">Who we are</h2>
+        <p class="text-text-light leading-relaxed">
+          This website is operated by {siteConfig.name}. We are committed to protecting your privacy and handling your personal information responsibly.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="font-heading text-2xl font-semibold text-primary mb-3">What data we collect</h2>
+        <p class="text-text-light leading-relaxed mb-3">
+          This website does not use cookies, tracking scripts, or analytics. We do not collect any personal data through this website.
+        </p>
+        <p class="text-text-light leading-relaxed">
+          If you contact us via email, we will only use your information to respond to your enquiry. We will not share your details with any third parties.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="font-heading text-2xl font-semibold text-primary mb-3">Class bookings</h2>
+        <p class="text-text-light leading-relaxed">
+          When you book a class, we may collect your name, email address, and phone number. This information is used solely for managing class bookings and communicating with you about your classes. We will not use your information for marketing purposes without your consent.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="font-heading text-2xl font-semibold text-primary mb-3">Third-party links</h2>
+        <p class="text-text-light leading-relaxed">
+          This website may contain links to external websites such as Instagram and Facebook. We are not responsible for the privacy practices of these external sites. We encourage you to read their privacy policies.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="font-heading text-2xl font-semibold text-primary mb-3">Your rights</h2>
+        <p class="text-text-light leading-relaxed">
+          You have the right to request access to, correction of, or deletion of any personal data we hold about you. To exercise these rights, please contact us at
+          <a href={`mailto:${siteConfig.email}`} class="text-accent hover:text-accent-dark transition-colors">{siteConfig.email}</a>.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="font-heading text-2xl font-semibold text-primary mb-3">Changes to this policy</h2>
+        <p class="text-text-light leading-relaxed">
+          We may update this privacy policy from time to time. Any changes will be posted on this page.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="font-heading text-2xl font-semibold text-primary mb-3">Contact</h2>
+        <p class="text-text-light leading-relaxed">
+          If you have any questions about this privacy policy, please contact us at
+          <a href={`mailto:${siteConfig.email}`} class="text-accent hover:text-accent-dark transition-colors">{siteConfig.email}</a>.
+        </p>
+      </div>
+
+      <p class="text-text-light text-sm">Last updated: February 2026</p>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,49 @@
+---
+import SectionHeading from '../ui/SectionHeading.astro';
+import Card from '../ui/Card.astro';
+import Button from '../ui/Button.astro';
+
+const classes = [
+  {
+    name: 'Gentle Flow',
+    description: 'Slow, spacious, and soothing. Great for beginners or those returning to practice.',
+    schedule: 'Monday, 6:00\u20137:00 pm',
+    icon: '\u{1F343}',
+  },
+  {
+    name: 'Vinyasa',
+    description: 'Steady, strength-building sequences with options for all levels.',
+    schedule: 'Wednesday, 6:30\u20137:30 pm',
+    icon: '\u{1F525}',
+  },
+  {
+    name: 'Beginners',
+    description: 'Foundations-focused, with simple cues and friendly pace.',
+    schedule: 'Friday, 9:30\u201310:30 am',
+    icon: '\u{1F331}',
+  },
+];
+---
+
+<section class="bg-bg py-16 sm:py-24">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <SectionHeading subtitle="Something for everyone — whether you're stepping onto the mat for the first time or deepening your practice.">
+      Classes
+    </SectionHeading>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+      {classes.map((cls) => (
+        <Card>
+          <span class="text-3xl mb-4 block" aria-hidden="true">{cls.icon}</span>
+          <h3 class="font-heading text-2xl font-semibold text-primary mb-2">{cls.name}</h3>
+          <p class="text-text-light mb-3">{cls.description}</p>
+          <p class="text-sm font-medium text-accent">{cls.schedule}</p>
+        </Card>
+      ))}
+    </div>
+
+    <div class="text-center mt-10">
+      <Button href="/classes/">Learn More About Classes</Button>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,41 @@
+---
+import SectionHeading from '../ui/SectionHeading.astro';
+import Card from '../ui/Card.astro';
+
+const testimonials = [
+  {
+    name: 'Amanda',
+    quote: 'Claire is an amazing teacher who inspires us all. She puts so much thought into every class. She encourages us and guides us safely through our poses, providing lots of adaptations & extensions throughout. I always feel uplifted, relaxed and empowered after each & every class.',
+  },
+  {
+    name: 'Emma',
+    quote: 'I honestly cannot recommend Claire\'s yoga classes highly enough. The atmosphere is calm, friendly and relaxing and the environment is safe and welcoming. All levels are catered for and Claire is totally mindful of everyone\'s individual capabilities and requirements.',
+  },
+  {
+    name: 'Diana',
+    quote: 'Claire is a wonderful yoga teacher, her classes always flow beautifully, leaving you feeling relaxed yet energised and spiritually ready to face your day. She also has the most wonderful calm voice.',
+  },
+];
+---
+
+<section class="bg-secondary/50 py-16 sm:py-24">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <SectionHeading subtitle="Don't just take our word for it — hear from Claire's students.">
+      What Students Say
+    </SectionHeading>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+      {testimonials.map((t) => (
+        <Card>
+          <svg class="w-8 h-8 text-accent/40 mb-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10H14.017zM0 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151C7.546 6.068 5.983 8.789 5.983 11h4v10H0z" />
+          </svg>
+          <blockquote>
+            <p class="text-text-light italic leading-relaxed mb-4">"{t.quote}"</p>
+            <footer class="font-medium text-primary">&mdash; {t.name}</footer>
+          </blockquote>
+        </Card>
+      ))}
+    </div>
+  </div>
+</section>

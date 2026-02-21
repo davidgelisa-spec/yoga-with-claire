@@ -1,0 +1,87 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Card from '../../components/ui/Card.astro';
+import Button from '../../components/ui/Button.astro';
+
+const prices = [
+  {
+    name: 'Drop-in',
+    price: '\u00a310',
+    description: 'Pay as you go — no commitment needed. Perfect if you want to try a class or prefer flexibility.',
+    highlight: false,
+  },
+  {
+    name: '6-Class Block',
+    price: '\u00a345',
+    description: 'Best value! Six classes to use at your own pace. Works out at just \u00a37.50 per class.',
+    highlight: true,
+  },
+];
+---
+
+<BaseLayout title="Prices" description="Affordable yoga classes with Yoga With Claire. Drop-in for \u00a310 or grab a 6-class block for \u00a345. Concessions available.">
+  <!-- Page Header -->
+  <section class="bg-secondary py-16 sm:py-20">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h1 class="font-heading text-4xl sm:text-5xl font-bold text-primary text-center">
+        Prices
+      </h1>
+      <p class="mt-4 text-text-light text-lg text-center max-w-2xl mx-auto">
+        Simple, affordable pricing with no hidden costs.
+      </p>
+    </div>
+  </section>
+
+  <!-- Pricing Cards -->
+  <section class="bg-bg py-16 sm:py-24">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
+        {prices.map((p) => (
+          <div class:list={[
+            'bg-white rounded-xl shadow-sm p-6 sm:p-8 text-center',
+            p.highlight && 'ring-2 ring-accent',
+          ]}>
+            {p.highlight && (
+              <p class="text-accent font-medium text-sm uppercase tracking-wide mb-2">Best Value</p>
+            )}
+            <h2 class="font-heading text-2xl font-semibold text-primary">{p.name}</h2>
+            <p class="mt-4">
+              <span class="font-heading text-5xl font-bold text-text">{p.price}</span>
+              {p.name === 'Drop-in' && <span class="text-text-light text-sm ml-1">/ class</span>}
+            </p>
+            <p class="mt-4 text-text-light">{p.description}</p>
+          </div>
+        ))}
+      </div>
+
+      <!-- Concessions -->
+      <div class="mt-12 bg-white rounded-xl shadow-sm p-6 sm:p-8 text-center">
+        <h3 class="font-heading text-xl font-semibold text-primary mb-2">Concessions Available</h3>
+        <p class="text-text-light">
+          If you're on a low income, a student, or over 65, concessions are available — just ask. Yoga should be accessible to everyone.
+        </p>
+      </div>
+
+      <!-- Payment info -->
+      <div class="mt-8 text-center text-text-light text-sm">
+        <p>Payment can be made in cash or by bank transfer. Get in touch for details.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-primary py-16 sm:py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="font-heading text-3xl sm:text-4xl font-semibold text-white mb-4">
+        Come and give it a try
+      </h2>
+      <p class="text-primary-light text-lg mb-8">
+        Your first class is always a great place to start.
+      </p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <Button href="/timetable/" size="lg">View Timetable</Button>
+        <Button href="/contact/" variant="secondary" size="lg">Get in Touch</Button>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

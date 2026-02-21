@@ -1,0 +1,17 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-primary: #5B7B6F;
+  --color-primary-light: #7A9B8F;
+  --color-primary-dark: #4A6A5E;
+  --color-secondary: #E8DDD3;
+  --color-secondary-dark: #D4C9BF;
+  --color-accent: #C4856A;
+  --color-accent-dark: #B07458;
+  --color-text: #2D2D2D;
+  --color-text-light: #6B6B6B;
+  --color-bg: #FAFAF7;
+  --color-white: #FFFFFF;
+  --font-heading: 'Cormorant Garamond', serif;
+  --font-body: 'Inter', sans-serif;
+}

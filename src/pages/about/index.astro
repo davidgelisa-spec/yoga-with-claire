@@ -1,0 +1,118 @@
+---
+import { Image } from 'astro:assets';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SectionHeading from '../../components/ui/SectionHeading.astro';
+import Card from '../../components/ui/Card.astro';
+import Button from '../../components/ui/Button.astro';
+import bwyBadge from '../../assets/images/bwy-teacher-badge.png';
+
+const testimonials = [
+  {
+    name: 'Amanda',
+    quote: 'Claire is an amazing teacher who inspires us all. She puts so much thought into every class. She encourages us and guides us safely through our poses, providing lots of adaptations & extensions throughout. I always feel uplifted, relaxed and empowered after each & every class. Thx so much Claire.',
+  },
+  {
+    name: 'Emma',
+    quote: "I honestly cannot recommend Claire's yoga classes highly enough. The atmosphere is calm, friendly and relaxing and the environment is safe and welcoming. All levels are catered for and Claire is totally mindful of everyone's individual capabilities and requirements - adjusting the moves accordingly. I feel fabulous and refreshed after each session.",
+  },
+  {
+    name: 'Diana',
+    quote: 'Claire is a wonderful yoga teacher, her classes always flow beautifully, leaving you feeling relaxed yet energised and spiritually ready to face your day. She also has the most wonderful calm voice.',
+  },
+  {
+    name: 'Rue',
+    quote: 'Yoga with Claire envelopes you into a loving embrace which nourishes body and soul. It is the highlight of my week!',
+  },
+  {
+    name: 'Lucy',
+    quote: 'Yoga with Claire is amazing. I love all the different breathing techniques I have learnt. I would highly recommend this class.',
+  },
+];
+---
+
+<BaseLayout title="About" description="Meet Claire — a friendly, down-to-earth yoga teacher registered with the British Wheel of Yoga (BWY). Learn about her approach to accessible, breath-led yoga.">
+  <!-- Page Header -->
+  <section class="bg-secondary py-16 sm:py-20">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h1 class="font-heading text-4xl sm:text-5xl font-bold text-primary text-center">
+        About Claire
+      </h1>
+      <p class="mt-4 text-text-light text-lg text-center max-w-2xl mx-auto">
+        Friendly, accessible yoga for every body.
+      </p>
+    </div>
+  </section>
+
+  <!-- About Content -->
+  <section class="bg-bg py-16 sm:py-24">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="prose prose-lg max-w-none">
+        <p class="text-text-light text-lg leading-relaxed mb-6">
+          Claire teaches friendly, accessible yoga classes that focus on breath-led movement, sustainable strength, and finding a calm, steady mind. Her classes are suitable for complete beginners through to those returning to the mat.
+        </p>
+        <p class="text-text-light text-lg leading-relaxed mb-6">
+          Every class is designed with care — whether it's a slow, soothing Gentle Flow, a strength-building Vinyasa sequence, or a foundations-focused Beginners session. Claire provides plenty of adaptations and extensions so everyone can work at their own level.
+        </p>
+        <p class="text-text-light text-lg leading-relaxed mb-6">
+          Her teaching style is warm, encouraging, and down-to-earth. No incense and crystals — just thoughtful movement, mindful breathing, and a welcoming space where you can be yourself.
+        </p>
+      </div>
+
+      <!-- BWY Accreditation -->
+      <div class="mt-12 flex flex-col sm:flex-row items-center gap-6 bg-white rounded-xl p-6 sm:p-8 shadow-sm">
+        <Image
+          src={bwyBadge}
+          alt="British Wheel of Yoga registered teacher badge"
+          class="w-32 h-auto shrink-0 rounded"
+          widths={[128, 256]}
+          loading="lazy"
+        />
+        <div>
+          <h2 class="font-heading text-xl font-semibold text-primary mb-2">Registered with the British Wheel of Yoga</h2>
+          <p class="text-text-light">
+            Claire is a registered teacher with the BWY — the UK's national governing body for yoga. This means she has completed rigorous training and is committed to ongoing professional development.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- All Testimonials -->
+  <section class="bg-secondary/50 py-16 sm:py-24">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <SectionHeading subtitle="Hear from Claire's students.">
+        What Students Say
+      </SectionHeading>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+        {testimonials.map((t) => (
+          <Card>
+            <svg class="w-8 h-8 text-accent/40 mb-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10H14.017zM0 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151C7.546 6.068 5.983 8.789 5.983 11h4v10H0z" />
+            </svg>
+            <blockquote>
+              <p class="text-text-light italic leading-relaxed mb-4">"{t.quote}"</p>
+              <footer class="font-medium text-primary">&mdash; {t.name}</footer>
+            </blockquote>
+          </Card>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-primary py-16 sm:py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="font-heading text-3xl sm:text-4xl font-semibold text-white mb-4">
+        Ready to try a class?
+      </h2>
+      <p class="text-primary-light text-lg mb-8">
+        Everyone is welcome — no experience needed.
+      </p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <Button href="/classes/" size="lg">View Classes</Button>
+        <Button href="/contact/" variant="secondary" size="lg">Get in Touch</Button>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

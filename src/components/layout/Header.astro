@@ -1,0 +1,99 @@
+---
+import { Image } from 'astro:assets';
+import { siteConfig } from '../../data/siteConfig';
+import logo from '../../assets/images/logo.png';
+
+const currentPath = Astro.url.pathname;
+---
+
+<header class="bg-white shadow-sm sticky top-0 z-50">
+  <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="Main navigation">
+    <div class="flex items-center justify-between h-16 sm:h-20">
+      <!-- Logo -->
+      <a href="/" class="block">
+        <Image
+          src={logo}
+          alt={siteConfig.name}
+          class="h-10 sm:h-14 w-auto"
+          widths={[640, 960]}
+        />
+      </a>
+
+      <!-- Mobile menu button -->
+      <button
+        type="button"
+        class="md:hidden inline-flex items-center justify-center p-2 rounded-md text-text hover:text-primary focus:outline-none focus:ring-2 focus:ring-primary"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+        id="mobile-menu-button"
+      >
+        <span class="sr-only">Open main menu</span>
+        <!-- Hamburger icon -->
+        <svg id="menu-icon-open" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+        </svg>
+        <!-- Close icon -->
+        <svg id="menu-icon-close" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+
+      <!-- Desktop navigation -->
+      <ul class="hidden md:flex items-center gap-1">
+        {siteConfig.nav.map((item) => (
+          <li>
+            <a
+              href={item.href}
+              class:list={[
+                'px-3 py-2 rounded-md text-sm font-medium transition-colors',
+                currentPath === item.href
+                  ? 'text-primary bg-secondary/50'
+                  : 'text-text-light hover:text-primary hover:bg-secondary/30',
+              ]}
+              aria-current={currentPath === item.href ? 'page' : undefined}
+            >
+              {item.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+
+    <!-- Mobile navigation -->
+    <div id="mobile-menu" class="hidden md:hidden pb-4">
+      <ul class="space-y-1">
+        {siteConfig.nav.map((item) => (
+          <li>
+            <a
+              href={item.href}
+              class:list={[
+                'block px-3 py-2 rounded-md text-base font-medium transition-colors',
+                currentPath === item.href
+                  ? 'text-primary bg-secondary/50'
+                  : 'text-text-light hover:text-primary hover:bg-secondary/30',
+              ]}
+              aria-current={currentPath === item.href ? 'page' : undefined}
+            >
+              {item.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<script>
+  const button = document.getElementById('mobile-menu-button');
+  const menu = document.getElementById('mobile-menu');
+  const iconOpen = document.getElementById('menu-icon-open');
+  const iconClose = document.getElementById('menu-icon-close');
+
+  button?.addEventListener('click', () => {
+    const isExpanded = button.getAttribute('aria-expanded') === 'true';
+    button.setAttribute('aria-expanded', String(!isExpanded));
+    menu?.classList.toggle('hidden');
+    iconOpen?.classList.toggle('hidden');
+    iconClose?.classList.toggle('hidden');
+  });
+</script>

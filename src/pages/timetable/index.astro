@@ -1,0 +1,104 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Button from '../../components/ui/Button.astro';
+
+const schedule = [
+  {
+    day: 'Monday',
+    class: 'Gentle Flow',
+    time: '6:00\u20137:00 pm',
+    description: 'Slow, spacious, and soothing.',
+  },
+  {
+    day: 'Wednesday',
+    class: 'Vinyasa',
+    time: '6:30\u20137:30 pm',
+    description: 'Steady, strength-building sequences.',
+  },
+  {
+    day: 'Friday',
+    class: 'Beginners',
+    time: '9:30\u201310:30 am',
+    description: 'Foundations-focused, friendly pace.',
+  },
+];
+---
+
+<BaseLayout title="Timetable" description="View the weekly yoga class timetable for Yoga With Claire. Gentle Flow on Monday, Vinyasa on Wednesday, and Beginners on Friday.">
+  <!-- Page Header -->
+  <section class="bg-secondary py-16 sm:py-20">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h1 class="font-heading text-4xl sm:text-5xl font-bold text-primary text-center">
+        Timetable
+      </h1>
+      <p class="mt-4 text-text-light text-lg text-center max-w-2xl mx-auto">
+        Three classes a week — find the one that fits your schedule.
+      </p>
+    </div>
+  </section>
+
+  <!-- Timetable -->
+  <section class="bg-bg py-16 sm:py-24">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Mobile cards -->
+      <div class="space-y-4 sm:hidden">
+        {schedule.map((s) => (
+          <div class="bg-white rounded-xl shadow-sm p-6">
+            <p class="text-accent font-medium text-sm uppercase tracking-wide">{s.day}</p>
+            <h2 class="font-heading text-2xl font-semibold text-primary mt-1">{s.class}</h2>
+            <p class="text-text-light mt-1">{s.description}</p>
+            <p class="text-text font-medium mt-3">{s.time}</p>
+          </div>
+        ))}
+      </div>
+
+      <!-- Desktop table -->
+      <div class="hidden sm:block bg-white rounded-xl shadow-sm overflow-hidden">
+        <table class="w-full">
+          <thead>
+            <tr class="bg-primary text-white">
+              <th class="text-left px-6 py-4 font-heading text-lg font-semibold">Day</th>
+              <th class="text-left px-6 py-4 font-heading text-lg font-semibold">Class</th>
+              <th class="text-left px-6 py-4 font-heading text-lg font-semibold">Time</th>
+              <th class="text-left px-6 py-4 font-heading text-lg font-semibold">Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            {schedule.map((s, i) => (
+              <tr class:list={[i % 2 === 1 && 'bg-secondary/30']}>
+                <td class="px-6 py-4 font-medium text-text">{s.day}</td>
+                <td class="px-6 py-4">
+                  <a href="/classes/" class="font-heading text-lg font-semibold text-primary hover:text-primary-dark transition-colors">
+                    {s.class}
+                  </a>
+                </td>
+                <td class="px-6 py-4 text-text">{s.time}</td>
+                <td class="px-6 py-4 text-text-light">{s.description}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <p class="mt-8 text-text-light text-center text-sm">
+        Timetable subject to change. Follow us on social media for updates.
+      </p>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-primary py-16 sm:py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="font-heading text-3xl sm:text-4xl font-semibold text-white mb-4">
+        Ready to book?
+      </h2>
+      <p class="text-primary-light text-lg mb-8">
+        Drop-in or grab a class block — whatever suits you best.
+      </p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <Button href="/prices/" size="lg">See Prices</Button>
+        <Button href="/contact/" variant="secondary" size="lg">Get in Touch</Button>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

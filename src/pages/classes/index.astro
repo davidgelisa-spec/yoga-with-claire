@@ -1,0 +1,106 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SectionHeading from '../../components/ui/SectionHeading.astro';
+import Card from '../../components/ui/Card.astro';
+import Button from '../../components/ui/Button.astro';
+
+const classes = [
+  {
+    name: 'Gentle Flow',
+    description: 'Slow, spacious, and soothing. Great for beginners or those returning to practice.',
+    details: 'A calming class that moves at a gentle pace, giving you time to settle into each pose and focus on your breath. We flow through a sequence of movements designed to release tension, improve flexibility, and leave you feeling deeply relaxed. Plenty of modifications are offered so you can work at a level that feels right for you.',
+    schedule: 'Monday, 6:00\u20137:00 pm',
+    suitable: 'All levels, especially beginners',
+  },
+  {
+    name: 'Vinyasa',
+    description: 'Steady, strength-building sequences with options for all levels.',
+    details: 'A flowing, dynamic class that links breath with movement. We build sustainable strength and mobility through thoughtful sequences that challenge the body while keeping the mind focused and calm. Options are always provided so you can choose the variation that works for you.',
+    schedule: 'Wednesday, 6:30\u20137:30 pm',
+    suitable: 'All levels with some yoga experience',
+  },
+  {
+    name: 'Beginners',
+    description: 'Foundations-focused, with simple cues and friendly pace.',
+    details: 'The perfect starting point for your yoga journey. We cover the foundational poses, basic breathing techniques, and simple sequences at a friendly, unhurried pace. Every movement is clearly explained with simple cues, so you always know what to do. No flexibility or experience required — just bring yourself and an open mind.',
+    schedule: 'Friday, 9:30\u201310:30 am',
+    suitable: 'Complete beginners',
+  },
+];
+---
+
+<BaseLayout title="Classes" description="Explore Yoga With Claire's classes: Gentle Flow, Vinyasa, and Beginners. Something for everyone, from complete beginners to experienced practitioners.">
+  <!-- Page Header -->
+  <section class="bg-secondary py-16 sm:py-20">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h1 class="font-heading text-4xl sm:text-5xl font-bold text-primary text-center">
+        Classes
+      </h1>
+      <p class="mt-4 text-text-light text-lg text-center max-w-2xl mx-auto">
+        Something for everyone — whether you're stepping onto the mat for the first time or deepening your practice.
+      </p>
+    </div>
+  </section>
+
+  <!-- Class Details -->
+  <section class="bg-bg py-16 sm:py-24">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 sm:space-y-12">
+      {classes.map((cls) => (
+        <Card>
+          <h2 class="font-heading text-2xl sm:text-3xl font-semibold text-primary mb-2">{cls.name}</h2>
+          <p class="text-accent font-medium mb-4">{cls.schedule}</p>
+          <p class="text-text-light leading-relaxed mb-4">{cls.details}</p>
+          <p class="text-sm text-text-light">
+            <span class="font-medium text-text">Suitable for:</span> {cls.suitable}
+          </p>
+        </Card>
+      ))}
+    </div>
+  </section>
+
+  <!-- What to Expect -->
+  <section class="bg-secondary/50 py-16 sm:py-24">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <SectionHeading subtitle="New to yoga? Here's what to know before your first class.">
+        What to Expect
+      </SectionHeading>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <Card>
+          <h3 class="font-heading text-xl font-semibold text-primary mb-2">What to Bring</h3>
+          <ul class="text-text-light space-y-2">
+            <li>Comfortable clothing you can move in</li>
+            <li>A yoga mat (spares are available)</li>
+            <li>Water bottle</li>
+            <li>A small towel (optional)</li>
+          </ul>
+        </Card>
+        <Card>
+          <h3 class="font-heading text-xl font-semibold text-primary mb-2">What to Know</h3>
+          <ul class="text-text-light space-y-2">
+            <li>Arrive 5\u201310 minutes early</li>
+            <li>No experience needed</li>
+            <li>All ages and abilities welcome</li>
+            <li>Work at your own pace, always</li>
+          </ul>
+        </Card>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-primary py-16 sm:py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="font-heading text-3xl sm:text-4xl font-semibold text-white mb-4">
+        Find a class that suits you
+      </h2>
+      <p class="text-primary-light text-lg mb-8">
+        Check the timetable and come along — everyone is welcome.
+      </p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <Button href="/timetable/" size="lg">View Timetable</Button>
+        <Button href="/prices/" variant="secondary" size="lg">See Prices</Button>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
