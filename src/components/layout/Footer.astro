@@ -1,7 +1,8 @@
 ---
 import { Image } from 'astro:assets';
 import { siteConfig } from '../../data/siteConfig';
-import logo from '../../assets/images/logo.png';
+import logoFigure from '../../assets/images/Yoga with Claire white outline.png';
+import logoText from '../../assets/images/yoga with claire logo text only.png';
 ---
 
 <footer class="bg-primary text-white">
@@ -9,12 +10,20 @@ import logo from '../../assets/images/logo.png';
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
       <!-- Brand -->
       <div>
-        <Image
-          src={logo}
-          alt={siteConfig.name}
-          class="h-12 w-auto brightness-0 invert mb-3"
-          widths={[760]}
-        />
+        <div class="flex items-center gap-3 mb-3">
+          <Image
+            src={logoFigure}
+            alt=""
+            class="h-10 w-auto"
+            widths={[80, 160]}
+          />
+          <Image
+            src={logoText}
+            alt={siteConfig.name}
+            class="h-8 w-auto brightness-0 invert"
+            widths={[320, 640]}
+          />
+        </div>
         <p class="text-primary-light text-sm">{siteConfig.tagline}</p>
       </div>
 
