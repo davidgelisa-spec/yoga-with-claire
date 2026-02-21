@@ -5,7 +5,7 @@ import { siteConfig } from '../../data/siteConfig';
 import heroImage from '../../assets/images/yogawithclairehero2.png';
 ---
 
-<section class="relative overflow-hidden">
+<section class="relative overflow-hidden min-h-[70vh] flex items-center">
   <!-- Background image -->
   <Image
     src={heroImage}
@@ -14,23 +14,23 @@ import heroImage from '../../assets/images/yogawithclairehero2.png';
     widths={[640, 1024, 1536]}
     sizes="100vw"
   />
-  <!-- Overlay -->
-  <div class="absolute inset-0 bg-primary-dark/60"></div>
+  <!-- Gradient overlay for depth -->
+  <div class="absolute inset-0 bg-gradient-to-r from-primary-dark/75 via-primary-dark/50 to-primary-dark/30"></div>
 
-  <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-32 lg:py-40">
-    <div class="max-w-3xl">
-      <p class="text-secondary font-medium text-sm sm:text-base uppercase tracking-wide mb-4">
-        Welcome to {siteConfig.name}
+  <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-28 sm:py-36 lg:py-44">
+    <div class="max-w-2xl">
+      <p class="text-secondary/80 text-xs sm:text-sm uppercase tracking-[0.2em] font-medium mb-6">
+        {siteConfig.name}
       </p>
-      <h1 class="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight">
+      <h1 class="font-heading text-5xl sm:text-6xl lg:text-7xl font-semibold text-white leading-[1.1] tracking-tight">
         Breath-led movement for a calm, steady mind
       </h1>
-      <p class="mt-6 text-secondary/90 text-lg sm:text-xl leading-relaxed max-w-2xl">
-        Friendly, accessible yoga classes suitable for complete beginners through to those returning to the mat. Build sustainable strength, improve mobility, and find your calm.
+      <p class="mt-8 text-white/80 text-lg leading-relaxed max-w-xl">
+        Friendly, accessible yoga for complete beginners through to those returning to the mat.
       </p>
-      <div class="mt-8 flex flex-wrap gap-4">
+      <div class="mt-10 flex flex-wrap gap-4">
         <Button href="/classes/" size="lg">View Classes</Button>
-        <Button href="/timetable/" variant="secondary" size="lg">See Timetable</Button>
+        <Button href="/timetable/" variant="outline" size="lg" class="border-white/40 text-white hover:bg-white hover:text-primary">See Timetable</Button>
       </div>
     </div>
   </div>

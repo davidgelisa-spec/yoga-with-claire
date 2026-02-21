@@ -1,6 +1,5 @@
 ---
 import SectionHeading from '../ui/SectionHeading.astro';
-import Card from '../ui/Card.astro';
 
 const testimonials = [
   {
@@ -18,23 +17,26 @@ const testimonials = [
 ];
 ---
 
-<section class="bg-secondary/50 py-16 sm:py-24">
+<section class="bg-bg py-20 sm:py-32">
   <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
     <SectionHeading subtitle="Don't just take our word for it — hear from Claire's students.">
       What Students Say
     </SectionHeading>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-10">
       {testimonials.map((t) => (
-        <Card>
-          <svg class="w-8 h-8 text-accent/40 mb-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+        <div class="fade-in text-center">
+          <svg class="w-10 h-10 text-accent/30 mx-auto mb-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
             <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10H14.017zM0 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151C7.546 6.068 5.983 8.789 5.983 11h4v10H0z" />
           </svg>
           <blockquote>
-            <p class="text-text-light italic leading-relaxed mb-4">"{t.quote}"</p>
-            <footer class="font-medium text-primary">&mdash; {t.name}</footer>
+            <p class="text-text-light italic leading-relaxed text-lg mb-6">"{t.quote}"</p>
+            <footer>
+              <div class="w-8 h-px bg-accent mx-auto mb-3"></div>
+              <span class="font-heading text-lg font-semibold text-primary">{t.name}</span>
+            </footer>
           </blockquote>
-        </Card>
+        </div>
       ))}
     </div>
   </div>

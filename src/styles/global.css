@@ -15,3 +15,32 @@
   --font-heading: 'Cormorant Garamond', serif;
   --font-body: 'Inter', sans-serif;
 }
+
+/* Scroll fade-in animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  opacity: 0;
+}
+
+.fade-in.is-visible {
+  animation: fadeInUp 0.7s ease-out forwards;
+}
+
+/* Stagger children */
+.fade-in.is-visible:nth-child(2) { animation-delay: 0.1s; }
+.fade-in.is-visible:nth-child(3) { animation-delay: 0.2s; }
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
