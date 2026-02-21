@@ -1,0 +1,37 @@
+---
+import { Image } from 'astro:assets';
+import Button from '../ui/Button.astro';
+import claireImg from '../../assets/images/yoga with claire.jpg';
+---
+
+<section class="bg-bg py-16 sm:py-24">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 sm:gap-16 items-center">
+      <!-- Photo -->
+      <div class="order-1 md:order-1">
+        <Image
+          src={claireImg}
+          alt="Claire sitting cross-legged on the beach"
+          class="rounded-2xl shadow-md w-full h-auto"
+          widths={[480, 720]}
+          sizes="(min-width: 768px) 50vw, 100vw"
+          loading="lazy"
+        />
+      </div>
+
+      <!-- Text -->
+      <div class="order-2 md:order-2">
+        <h2 class="font-heading text-3xl sm:text-4xl font-semibold text-primary mb-4">
+          Meet Claire
+        </h2>
+        <p class="text-text-light text-lg leading-relaxed mb-4">
+          Claire teaches friendly, accessible yoga that focuses on breath-led movement, sustainable strength, and finding a calm, steady mind. Her classes are suitable for complete beginners through to those returning to the mat.
+        </p>
+        <p class="text-text-light text-lg leading-relaxed mb-6">
+          Warm, encouraging, and down-to-earth — no jargon, just thoughtful movement and a welcoming space where you can be yourself.
+        </p>
+        <Button href="/about/">More About Claire</Button>
+      </div>
+    </div>
+  </div>
+</section>
