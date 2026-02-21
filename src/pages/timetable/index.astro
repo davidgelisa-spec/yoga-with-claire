@@ -1,83 +1,24 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/sections/PageHero.astro';
 import Button from '../../components/ui/Button.astro';
+import heroImg from '../../assets/images/yoga with claire 3.jpg';
 
-const schedule = [
-  {
-    day: 'Monday',
-    class: 'Gentle Flow',
-    time: '6:00\u20137:00 pm',
-    description: 'Slow, spacious, and soothing.',
-  },
-  {
-    day: 'Wednesday',
-    class: 'Vinyasa',
-    time: '6:30\u20137:30 pm',
-    description: 'Steady, strength-building sequences.',
-  },
-  {
-    day: 'Friday',
-    class: 'Beginners',
-    time: '9:30\u201310:30 am',
-    description: 'Foundations-focused, friendly pace.',
-  },
-];
 ---
 
-<BaseLayout title="Timetable" description="View the weekly yoga class timetable for Yoga With Claire. Gentle Flow on Monday, Vinyasa on Wednesday, and Beginners on Friday.">
-  <!-- Page Header -->
-  <section class="bg-secondary py-16 sm:py-20">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h1 class="font-heading text-4xl sm:text-5xl font-bold text-primary text-center">
-        Timetable
-      </h1>
-      <p class="mt-4 text-text-light text-lg text-center max-w-2xl mx-auto">
-        Three classes a week — find the one that fits your schedule.
-      </p>
-    </div>
-  </section>
+<BaseLayout title="Timetable" description="Yoga With Claire — weekly class on Tuesday evenings, 7:00–8:15 pm at Mudeford Infants School. All levels welcome.">
+  <PageHero title="Timetable" subtitle="One class a week — come along and join us." image={heroImg} />
 
   <!-- Timetable -->
   <section class="bg-bg py-16 sm:py-24">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <!-- Mobile cards -->
-      <div class="space-y-4 sm:hidden">
-        {schedule.map((s) => (
-          <div class="bg-white rounded-xl shadow-sm p-6">
-            <p class="text-accent font-medium text-sm uppercase tracking-wide">{s.day}</p>
-            <h2 class="font-heading text-2xl font-semibold text-primary mt-1">{s.class}</h2>
-            <p class="text-text-light mt-1">{s.description}</p>
-            <p class="text-text font-medium mt-3">{s.time}</p>
-          </div>
-        ))}
-      </div>
-
-      <!-- Desktop table -->
-      <div class="hidden sm:block bg-white rounded-xl shadow-sm overflow-hidden">
-        <table class="w-full">
-          <thead>
-            <tr class="bg-primary text-white">
-              <th class="text-left px-6 py-4 font-heading text-lg font-semibold">Day</th>
-              <th class="text-left px-6 py-4 font-heading text-lg font-semibold">Class</th>
-              <th class="text-left px-6 py-4 font-heading text-lg font-semibold">Time</th>
-              <th class="text-left px-6 py-4 font-heading text-lg font-semibold">Description</th>
-            </tr>
-          </thead>
-          <tbody>
-            {schedule.map((s, i) => (
-              <tr class:list={[i % 2 === 1 && 'bg-secondary/30']}>
-                <td class="px-6 py-4 font-medium text-text">{s.day}</td>
-                <td class="px-6 py-4">
-                  <a href="/classes/" class="font-heading text-lg font-semibold text-primary hover:text-primary-dark transition-colors">
-                    {s.class}
-                  </a>
-                </td>
-                <td class="px-6 py-4 text-text">{s.time}</td>
-                <td class="px-6 py-4 text-text-light">{s.description}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+      <div class="max-w-lg mx-auto bg-white rounded-xl shadow-sm p-8 sm:p-10 text-center">
+        <p class="text-accent font-medium text-sm uppercase tracking-wide">Tuesday</p>
+        <h2 class="font-heading text-2xl sm:text-3xl font-semibold text-primary mt-2">Yoga With Claire</h2>
+        <div class="w-10 h-px bg-accent mx-auto my-4"></div>
+        <p class="text-text text-lg font-medium">7:00–8:15 pm</p>
+        <p class="text-text-light mt-2">Mudeford Infants School</p>
+        <p class="text-text-light mt-4 leading-relaxed">A friendly, mixed-level class for all abilities. Breath-led movement, gentle flow, and strength-building sequences.</p>
       </div>
 
       <p class="mt-8 text-text-light text-center text-sm">

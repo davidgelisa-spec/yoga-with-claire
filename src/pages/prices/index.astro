@@ -1,7 +1,9 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/sections/PageHero.astro';
 import Card from '../../components/ui/Card.astro';
 import Button from '../../components/ui/Button.astro';
+import heroImg from '../../assets/images/yoga with claire 4.jpg';
 
 const prices = [
   {
@@ -20,17 +22,7 @@ const prices = [
 ---
 
 <BaseLayout title="Prices" description="Affordable yoga classes with Yoga With Claire. Drop-in for \u00a310 or grab a 6-class block for \u00a345. Concessions available.">
-  <!-- Page Header -->
-  <section class="bg-secondary py-16 sm:py-20">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h1 class="font-heading text-4xl sm:text-5xl font-bold text-primary text-center">
-        Prices
-      </h1>
-      <p class="mt-4 text-text-light text-lg text-center max-w-2xl mx-auto">
-        Simple, affordable pricing with no hidden costs.
-      </p>
-    </div>
-  </section>
+  <PageHero title="Prices" subtitle="Simple, affordable pricing with no hidden costs." image={heroImg} />
 
   <!-- Pricing Cards -->
   <section class="bg-bg py-16 sm:py-24">

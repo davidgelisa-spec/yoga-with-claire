@@ -1,17 +1,11 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/sections/PageHero.astro';
 import { siteConfig } from '../../data/siteConfig';
 ---
 
 <BaseLayout title="Privacy Policy" description="Privacy policy for Yoga With Claire.">
-  <!-- Page Header -->
-  <section class="bg-secondary py-16 sm:py-20">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h1 class="font-heading text-4xl sm:text-5xl font-bold text-primary text-center">
-        Privacy Policy
-      </h1>
-    </div>
-  </section>
+  <PageHero title="Privacy Policy" />
 
   <!-- Content -->
   <section class="bg-bg py-16 sm:py-24">

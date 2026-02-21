@@ -2,40 +2,22 @@
 import SectionHeading from '../ui/SectionHeading.astro';
 import Button from '../ui/Button.astro';
 
-const classes = [
-  {
-    name: 'Gentle Flow',
-    description: 'Slow, spacious, and soothing. Great for beginners or those returning to practice.',
-    schedule: 'Monday, 6:00\u20137:00 pm',
-  },
-  {
-    name: 'Vinyasa',
-    description: 'Steady, strength-building sequences with options for all levels.',
-    schedule: 'Wednesday, 6:30\u20137:30 pm',
-  },
-  {
-    name: 'Beginners',
-    description: 'Foundations-focused, with simple cues and friendly pace.',
-    schedule: 'Friday, 9:30\u201310:30 am',
-  },
-];
 ---
 
 <section class="bg-white py-20 sm:py-32">
   <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-    <SectionHeading subtitle="Something for everyone — whether you're stepping onto the mat for the first time or deepening your practice.">
-      Classes
+    <SectionHeading subtitle="Breath-led movement for all levels — whether you're stepping onto the mat for the first time or deepening your practice.">
+      Weekly Class
     </SectionHeading>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-10">
-      {classes.map((cls) => (
-        <div class="fade-in text-center p-8 sm:p-10 rounded-2xl border border-secondary/60 hover:shadow-lg transition-shadow duration-300">
-          <h3 class="font-heading text-3xl font-semibold text-primary mb-3">{cls.name}</h3>
-          <div class="w-10 h-px bg-accent mx-auto mb-4"></div>
-          <p class="text-text-light leading-relaxed mb-4">{cls.description}</p>
-          <p class="text-sm font-medium text-accent tracking-wide">{cls.schedule}</p>
-        </div>
-      ))}
+    <div class="max-w-lg mx-auto">
+      <div class="fade-in text-center p-8 sm:p-10 rounded-2xl border border-secondary/60 hover:shadow-lg transition-shadow duration-300">
+        <h3 class="font-heading text-3xl font-semibold text-primary mb-3">Yoga With Claire</h3>
+        <div class="w-10 h-px bg-accent mx-auto mb-4"></div>
+        <p class="text-text-light leading-relaxed mb-4">A friendly, mixed-level class combining gentle flow, strength-building movement, and breathwork. All levels welcome — complete beginners through to those returning to the mat.</p>
+        <p class="text-sm font-medium text-accent tracking-wide">Tuesday, 7:00–8:15 pm</p>
+        <p class="text-sm text-text-light mt-2">Mudeford Infants School</p>
+      </div>
     </div>
 
     <div class="text-center mt-14">

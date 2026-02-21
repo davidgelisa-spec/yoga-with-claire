@@ -1,21 +1,13 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/sections/PageHero.astro';
 import Card from '../../components/ui/Card.astro';
 import { siteConfig } from '../../data/siteConfig';
+import heroImg from '../../assets/images/yogawithclairehero.png';
 ---
 
 <BaseLayout title="Contact" description="Get in touch with Yoga With Claire. Email, phone, or find us on Instagram and Facebook.">
-  <!-- Page Header -->
-  <section class="bg-secondary py-16 sm:py-20">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h1 class="font-heading text-4xl sm:text-5xl font-bold text-primary text-center">
-        Get in Touch
-      </h1>
-      <p class="mt-4 text-text-light text-lg text-center max-w-2xl mx-auto">
-        Have a question, want to book a class, or just want to say hello? I'd love to hear from you.
-      </p>
-    </div>
-  </section>
+  <PageHero title="Get in Touch" subtitle="Have a question, want to book a class, or just want to say hello? I'd love to hear from you." image={heroImg} />
 
   <!-- Contact Details -->
   <section class="bg-bg py-16 sm:py-24">
@@ -75,18 +67,18 @@ import { siteConfig } from '../../data/siteConfig';
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-10">
         <h2 class="font-heading text-3xl sm:text-4xl font-semibold text-primary">Find Us</h2>
-        <p class="mt-3 text-text-light text-lg">Mudeford Girl Guide Hall, BH23 3ND</p>
+        <p class="mt-3 text-text-light text-lg">Mudeford Infants School</p>
       </div>
       <div class="rounded-xl overflow-hidden shadow-sm">
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2541.5!2d-1.7475!3d50.7340!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTDCsDQ0JzAyLjQiTiAxwrA0NCc1MS4wIlc!5e0!3m2!1sen!2suk!4v1!5m2!1sen!2suk&q=Mudeford+Girl+Guide+Hall+BH23+3ND"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2541.5!2d-1.7475!3d50.7340!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTDCsDQ0JzAyLjQiTiAxwrA0NCc1MS4wIlc!5e0!3m2!1sen!2suk!4v1!5m2!1sen!2suk&q=Mudeford+Infants+School"
           width="100%"
           height="400"
           style="border:0;"
           allowfullscreen=""
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"
-          title="Map showing location of Mudeford Girl Guide Hall"
+          title="Map showing location of Mudeford Infants School"
         ></iframe>
       </div>
     </div>

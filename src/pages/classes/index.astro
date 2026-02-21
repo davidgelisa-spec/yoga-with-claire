@@ -1,60 +1,26 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/sections/PageHero.astro';
 import SectionHeading from '../../components/ui/SectionHeading.astro';
 import Card from '../../components/ui/Card.astro';
 import Button from '../../components/ui/Button.astro';
-
-const classes = [
-  {
-    name: 'Gentle Flow',
-    description: 'Slow, spacious, and soothing. Great for beginners or those returning to practice.',
-    details: 'A calming class that moves at a gentle pace, giving you time to settle into each pose and focus on your breath. We flow through a sequence of movements designed to release tension, improve flexibility, and leave you feeling deeply relaxed. Plenty of modifications are offered so you can work at a level that feels right for you.',
-    schedule: 'Monday, 6:00\u20137:00 pm',
-    suitable: 'All levels, especially beginners',
-  },
-  {
-    name: 'Vinyasa',
-    description: 'Steady, strength-building sequences with options for all levels.',
-    details: 'A flowing, dynamic class that links breath with movement. We build sustainable strength and mobility through thoughtful sequences that challenge the body while keeping the mind focused and calm. Options are always provided so you can choose the variation that works for you.',
-    schedule: 'Wednesday, 6:30\u20137:30 pm',
-    suitable: 'All levels with some yoga experience',
-  },
-  {
-    name: 'Beginners',
-    description: 'Foundations-focused, with simple cues and friendly pace.',
-    details: 'The perfect starting point for your yoga journey. We cover the foundational poses, basic breathing techniques, and simple sequences at a friendly, unhurried pace. Every movement is clearly explained with simple cues, so you always know what to do. No flexibility or experience required — just bring yourself and an open mind.',
-    schedule: 'Friday, 9:30\u201310:30 am',
-    suitable: 'Complete beginners',
-  },
-];
 ---
 
-<BaseLayout title="Classes" description="Explore Yoga With Claire's classes: Gentle Flow, Vinyasa, and Beginners. Something for everyone, from complete beginners to experienced practitioners.">
-  <!-- Page Header -->
-  <section class="bg-secondary py-16 sm:py-20">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h1 class="font-heading text-4xl sm:text-5xl font-bold text-primary text-center">
-        Classes
-      </h1>
-      <p class="mt-4 text-text-light text-lg text-center max-w-2xl mx-auto">
-        Something for everyone — whether you're stepping onto the mat for the first time or deepening your practice.
-      </p>
-    </div>
-  </section>
+<BaseLayout title="Classes" description="Yoga With Claire offers a friendly, mixed-level weekly class combining gentle flow, strength-building movement, and breathwork. All levels welcome.">
+  <PageHero title="Classes" subtitle="Breath-led movement for all levels — whether you're stepping onto the mat for the first time or deepening your practice." />
 
   <!-- Class Details -->
   <section class="bg-bg py-16 sm:py-24">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 sm:space-y-12">
-      {classes.map((cls) => (
-        <Card>
-          <h2 class="font-heading text-2xl sm:text-3xl font-semibold text-primary mb-2">{cls.name}</h2>
-          <p class="text-accent font-medium mb-4">{cls.schedule}</p>
-          <p class="text-text-light leading-relaxed mb-4">{cls.details}</p>
-          <p class="text-sm text-text-light">
-            <span class="font-medium text-text">Suitable for:</span> {cls.suitable}
-          </p>
-        </Card>
-      ))}
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <Card>
+        <h2 class="font-heading text-2xl sm:text-3xl font-semibold text-primary mb-2">Weekly Yoga Class</h2>
+        <p class="text-accent font-medium mb-4">Tuesday, 7:00–8:15 pm · Mudeford Infants School</p>
+        <p class="text-text-light leading-relaxed mb-4">A friendly, mixed-level class that blends gentle flow, strength-building sequences, and breathwork. Each session is thoughtfully planned with plenty of adaptations and extensions, so you can work at a level that feels right for you — whether you're a complete beginner or returning to the mat.</p>
+        <p class="text-text-light leading-relaxed mb-4">Classes are breath-led, focusing on sustainable movement, mobility, and finding a calm, steady mind. You'll leave feeling relaxed, energised, and ready to face your week.</p>
+        <p class="text-sm text-text-light">
+          <span class="font-medium text-text">Suitable for:</span> All levels — complete beginners welcome
+        </p>
+      </Card>
     </div>
   </section>
 
@@ -92,7 +58,7 @@ const classes = [
   <section class="bg-primary py-16 sm:py-20">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
       <h2 class="font-heading text-3xl sm:text-4xl font-semibold text-white mb-4">
-        Find a class that suits you
+        Come and give it a try
       </h2>
       <p class="text-primary-light text-lg mb-8">
         Check the timetable and come along — everyone is welcome.
