@@ -69,6 +69,27 @@ import logo from '../../assets/images/logo.png';
       </div>
     </div>
 
+    <!-- Newsletter Signup -->
+    <div class="border-t border-primary-light/30 mt-8 pt-8">
+      <h3 class="font-heading text-lg font-semibold mb-2">Stay in the Loop</h3>
+      <p class="text-primary-light text-sm mb-4">Get updates on classes, timetable changes, and workshops.</p>
+      <form action={`mailto:${siteConfig.email}?subject=Newsletter%20signup`} method="GET" class="flex flex-col sm:flex-row gap-3 max-w-md">
+        <input
+          type="email"
+          name="body"
+          placeholder="Your email address"
+          required
+          class="flex-1 px-4 py-2.5 rounded-lg bg-primary-dark/50 border border-primary-light/30 text-white placeholder:text-primary-light/60 focus:outline-none focus:ring-2 focus:ring-accent text-sm"
+        />
+        <button
+          type="submit"
+          class="px-6 py-2.5 bg-accent hover:bg-accent-dark text-white font-medium rounded-lg transition-colors text-sm"
+        >
+          Sign Up
+        </button>
+      </form>
+    </div>
+
     <!-- Bottom bar -->
     <div class="border-t border-primary-light/30 mt-8 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-primary-light">
       <p>&copy; {new Date().getFullYear()} {siteConfig.name}. All rights reserved.</p>
