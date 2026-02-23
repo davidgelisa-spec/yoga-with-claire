@@ -13,15 +13,16 @@ const prices = [
     highlight: false,
   },
   {
-    name: '6-Class Block',
-    price: '\u00a345',
-    description: 'Best value! Six classes to use at your own pace. Works out at just \u00a37.50 per class.',
+    name: 'Block Booking',
+    price: '\u00a38',
+    perClass: true,
+    description: 'Best value! Book a block (usually 6–7 weeks) and save \u00a32 per class.',
     highlight: true,
   },
 ];
 ---
 
-<BaseLayout title="Prices" description="Affordable yoga classes with Yoga With Claire. Drop-in for \u00a310 or grab a 6-class block for \u00a345. Concessions available.">
+<BaseLayout title="Prices" description="Affordable yoga classes with Yoga With Claire. Drop-in for \u00a310 or \u00a38 per class with a block booking. Concessions available.">
   <PageHero title="Prices" subtitle="Simple, affordable pricing with no hidden costs." image={heroImg} />
 
   <!-- Pricing Cards -->
@@ -39,7 +40,7 @@ const prices = [
             <h2 class="font-heading text-2xl font-semibold text-primary">{p.name}</h2>
             <p class="mt-4">
               <span class="font-heading text-5xl font-bold text-text">{p.price}</span>
-              {p.name === 'Drop-in' && <span class="text-text-light text-sm ml-1">/ class</span>}
+              {(p.name === 'Drop-in' || p.perClass) && <span class="text-text-light text-sm ml-1">/ class</span>}
             </p>
             <p class="mt-4 text-text-light">{p.description}</p>
           </div>
